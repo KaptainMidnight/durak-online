@@ -17,9 +17,9 @@ final class CreateUserService
     ) {
     }
 
-    public function create(string $username, string $email): User
+    public function create(int $id, string $username): User
     {
-        $user = new User($username, $email);
+        $user = new User(id: $id, username: $username);
         $this->em->persist($user)->run();
 
         return $user;

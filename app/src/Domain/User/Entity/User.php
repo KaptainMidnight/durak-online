@@ -13,15 +13,15 @@ use Cycle\Annotated\Annotation\Entity;
 )]
 class User
 {
-    /** @psalm-suppress PropertyNotSetInConstructor */
-    #[Column(type: 'primary')]
-    private int $id;
-
     public function __construct(
+        #[Column(type: 'primary')]
+        private int $id,
         #[Column(type: 'string')]
         private string $username,
-        #[Column(type: 'string')]
-        private string $email,
+        #[Column(type: 'integer', default: 0)]
+        private int $coins = 0,
+        #[Column(type: 'integer', default: 0)]
+        private int $cash = 0
     ) {
     }
 
@@ -35,8 +35,13 @@ class User
         return $this->username;
     }
 
-    public function getEmail(): string
+    public function getCoins(): int
     {
-        return $this->email;
+        return $this->coins;
+    }
+
+    public function getCash(): int
+    {
+        return $this->cash;
     }
 }
