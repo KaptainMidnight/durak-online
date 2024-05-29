@@ -55,6 +55,7 @@ class Kernel extends \Spiral\Framework\Kernel
             // RoadRunner
             RoadRunnerBridge\LoggerBootloader::class,
             RoadRunnerBridge\HttpBootloader::class,
+            RoadRunnerBridge\CentrifugoBootloader::class,
 
             // Core Services
             Framework\SnapshotsBootloader::class,

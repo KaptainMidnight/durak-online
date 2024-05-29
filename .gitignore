@@ -8,3 +8,5 @@ protoc-gen-php-grpc*
 .phpunit.cache
 .deptrac.cache
 .phpunit.cache/
+centrifugo
+config.json
